@@ -1,0 +1,30 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZHTF_2017_IOT_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="iotMessage" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="messageType"/>
+                    <PropertyRef Name="subtype"/>
+                    <PropertyRef Name="timestamp"/>
+                </Key>
+                <Property Name="messageType" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="MESSAGE_TYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="subtype" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="SUBTYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="timestamp" Type="Edm.DateTime" Nullable="false" Precision="0" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="longitude" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="4" sap:label="LONGITUDE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="latitude" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="4" sap:label="LATITUDE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="score" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZHTF_2017_IOT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="iotMessageSet" EntityType="ZHTF_2017_IOT_SRV.iotMessage" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://FG2:8000/sap/opu/odata/sap/ZHTF_2017_IOT_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://FG2:8000/sap/opu/odata/sap/ZHTF_2017_IOT_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>
